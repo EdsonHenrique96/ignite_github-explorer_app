@@ -1,6 +1,8 @@
 import React from 'react';
 import { RespositoryItem } from './RepositoryItem';
 
+import '../styles/repositories.scss';
+
 const repository = {
   name: "skin4dev",
   description: "skins for developers",
@@ -9,7 +11,7 @@ const repository = {
 
 export function RepositoryList() {
   return(
-    <div>
+    <section className="repository-list">
       <h1>Lista de repositórios</h1>
 
       <ul>
@@ -18,6 +20,6 @@ export function RepositoryList() {
         <RespositoryItem/>
         <RespositoryItem/>
       </ul>
-    </div>
+    </section>
   )
 }
