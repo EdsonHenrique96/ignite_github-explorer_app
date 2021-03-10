@@ -3,16 +3,17 @@ import { RespositoryItem } from './RepositoryItem';
 
 import '../styles/repositories.scss';
 
-const repository = {
-  name: "skin4dev",
-  description: "skins for developers",
-  url: "https://github.com"
+interface Repository {
+  id: string;
+  name: string;
+  description: string;
+  html_url: string;
 }
 
 const REPO_URL = 'https://api.github.com/orgs/rocketseat/repos';
 
 export function RepositoryList() {
-  const [ repositories, setRepositories ] = useState([]);
+  const [ repositories, setRepositories ] = useState<Repository[]>([]);
 
   useEffect(() => {
     fetch(REPO_URL)
